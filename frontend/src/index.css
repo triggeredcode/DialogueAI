@@ -1,0 +1,95 @@
+@import '@fontsource/space-grotesk/400.css';
+@import '@fontsource/space-grotesk/700.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+  }
+
+  :root.light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+
+  select option {
+    @apply bg-slate-900 text-white;
+  }
+
+  .light select option {
+    @apply bg-white text-slate-900;
+  }
+
+  .light .glass-panel {
+    @apply bg-slate-50/80 border-slate-200;
+  }
+
+  .light .feature-card {
+    @apply bg-white shadow-lg border-slate-200;
+  }
+
+  .light .input-primary {
+    @apply bg-white border-slate-200 text-slate-900 placeholder-slate-400;
+  }
+}
+
+@layer components {
+  .cyber-gradient {
+    @apply bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink bg-clip-text text-transparent;
+  }
+  
+  .cyber-border {
+    @apply border border-transparent bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-pink;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-cyber-blue to-cyber-purple text-white py-3 px-6 rounded-xl
+           hover:opacity-90 transition-all duration-300 font-mono uppercase tracking-wider
+           shadow-[0_0_20px_rgba(145,94,255,0.3)] hover:shadow-[0_0_30px_rgba(145,94,255,0.5)];
+  }
+  
+  .input-primary {
+    @apply w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10
+           focus:ring-2 focus:ring-cyber-purple focus:border-transparent outline-none
+           text-white placeholder-white/50 font-mono;
+  }
+
+  .feature-card {
+    @apply glass-panel p-6 hover:scale-105 transition-all duration-300
+           hover:shadow-[0_0_30px_rgba(145,94,255,0.2)];
+  }
+
+  .light .text-white\/60 {
+    @apply text-slate-600;
+  }
+
+  .light .text-white\/70 {
+    @apply text-slate-700;
+  }
+
+  .light .text-white\/80 {
+    @apply text-slate-800;
+  }
+
+  .light .text-white\/90 {
+    @apply text-slate-900;
+  }
+}
