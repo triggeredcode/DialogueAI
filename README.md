@@ -72,8 +72,8 @@ To get started with DialogueAI, follow these steps:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/dialogueai.git
-cd dialogueai
+git clone https://github.com/triggeredcode/DialogueAI.git
+cd DialogueAI
 ```
 
 ### Backend
