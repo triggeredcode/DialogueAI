@@ -247,6 +247,10 @@ app.post('/summary', async (req, res) => {
     await new Promise(resolve => setTimeout(resolve, 10000));
 })
 
+app.get('/', async(req, res) => {
+    res.send('DialogueAI Backend Server running...');
+})
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
