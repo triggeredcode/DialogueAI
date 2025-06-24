@@ -30,5 +30,10 @@ RUN chmod +x /usr/local/bin/start.sh
 EXPOSE 3000
 EXPOSE 5173
 
-# Set the command to run when the container starts, using the ABSOLUTE path.
-CMD ["/usr/local/bin/start.sh"]
+# Set the ENTRYPOINT to your start.sh script.
+# This makes start.sh the primary executable for the container.
+ENTRYPOINT ["/usr/local/bin/start.sh"]
+
+# CMD is now optional. If you had arguments to pass to start.sh, they would go here.
+# Since start.sh runs the services directly, we don't need a CMD here.
+CMD []
